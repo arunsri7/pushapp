@@ -1,6 +1,7 @@
 package com.example.pushapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -23,10 +24,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Pull to Refresh
+        final SwipeRefreshLayout pullToRefresh = findViewById(R.id.pullToRefresh);
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                int refreshedValue = 0;
+                countTv.setText(String.valueOf(refreshedValue));
+                pullToRefresh.setRefreshing(false);
+            }
+        });
+
         //Initialization.
         countTv = findViewById(R.id.count_tv);
         increment = findViewById(R.id.increment);
-        reset = findViewById(R.id.reset);
 
         increment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view)
@@ -35,13 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 countTv.setText(String.valueOf(count));// view in the text
             }
 
-        });
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int refreshedValue = 0;
-                countTv.setText(String.valueOf(refreshedValue));
-            }
         });
     }
 }
