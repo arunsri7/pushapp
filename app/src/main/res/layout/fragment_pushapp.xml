@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pullToRefresh"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -16,18 +16,37 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@android:dimen/app_icon_size"
         android:text="Number of Push-ups"
+        android:id="@+id/pushup_text"
         android:layout_centerHorizontal="true"
         android:textSize="30dp"
         />
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/pushup_text"
+            app:lottie_rawRes="@raw/pushup"
+            app:lottie_loop="true"
+            android:id="@+id/lottie_pushup"
+            app:lottie_autoPlay="true">
+        </com.airbnb.lottie.LottieAnimationView>
     <TextView
         android:id="@+id/count_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="100dp"
+        android:text="0"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:layout_below="@+id/lottie_pushup"
+        android:layout_centerVertical="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pull down to refresh"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/count_tv"/>
     </RelativeLayout>
-
 </FrameLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
