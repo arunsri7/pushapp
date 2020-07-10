@@ -5,12 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".RecordsFragment">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Records"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:textColor="#000"/>
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Records"
+            android:id="@+id/records"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#000"/>
+    </RelativeLayout>
 
 </FrameLayout>
