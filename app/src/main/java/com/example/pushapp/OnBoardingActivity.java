@@ -1,19 +1,15 @@
 package com.example.pushapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.Toast;
 import com.ramotion.paperonboarding.PaperOnboardingEngine;
 import com.ramotion.paperonboarding.PaperOnboardingPage;
 import com.ramotion.paperonboarding.listeners.PaperOnboardingOnChangeListener;
 import com.ramotion.paperonboarding.listeners.PaperOnboardingOnRightOutListener;
 
 import java.util.ArrayList;
-
 
 public class OnBoardingActivity extends AppCompatActivity {
 
@@ -40,7 +36,6 @@ public class OnBoardingActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
     }
 
     // Just example data for Onboarding
